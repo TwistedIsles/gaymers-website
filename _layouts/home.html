@@ -2,19 +2,47 @@
 layout: default
 ---
 
-<div class="home wrapper">
-  <div class="header">
+<div class="home">
+  <div class="header wrapper">
     {{ content }}
   </div>
 
   <div class="post-list">
     {% for post in site.posts %}
-      {% assign date_format = "%b %-d, %Y" %}
-      <span class="post-meta">{{ post.date | date: date_format }}</span>
+      <div class="post">
+        {% assign date_format = "%b %-d, %Y" %}
+        {% if post.image %}
+          <div class="image-container wrapper">
+            <div class="image-cover"></div>
+            <img src="{{ site.url }}/assets/images/{{ post.image }}" />
+          </div>
+        {% endif %}
 
-      <h2>
-        <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-      </h2>
+        <div class="title-container {{ post.type }}">
+          <div class="wrapper">
+            <a class="post-link" href="{{ post.url | relative_url }}">
+              <h1 class="post-title" itemprop="name headline">{{ post.title | escape }}</h1>
+            </a>
+
+            <div class="post-meta">
+              <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">
+                {{ post.date | date: date_format }}
+              </time>
+
+              {% if post.author %}
+                <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                  <span class="author" itemprop="name">— {{ post.author }}</span>
+                </span>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+
+        <div class="content-container wrapper"itemprop="articleBody">
+          {{ post.excerpt }}
+        </div>
+
+      </div>
     {% endfor %}
   </div>
 </div>
