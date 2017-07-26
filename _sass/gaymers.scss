@@ -1,25 +1,42 @@
 @charset "utf-8";
 
-// colors
-$gaymers-primary: #0A1531;
-$gaymers-primary-dark: #081025;
-$gaymers-primary-light: #0E1F4A;
+// Colors
+$gaymers-red: #FB0646;
+$gaymers-orange: #FF8235;
+$gaymers-yellow: #FFF90E;
+$gaymers-green: #00E438;
+$gaymers-blue: #0B4CCC;
+$gaymers-purple: #D912F9;
 
-$gaymers-secondary: #FE054D;
-$gaymers-secondary-dark: #d0013c;
-$gaymers-secondary-light: #fe3971;
+$gaymers-primary: $gaymers-blue;
+$gaymers-primary-dark: darken($gaymers-blue, 10%);
+$gaymers-primary-light: lighten($gaymers-blue, 10%);
 
 $discord-purple: #7289DA;
-$discord-purple-dark: #4A67Cf;
+$discord-purple-dark: darken($discord-purple, 10%);
 
 // Fonts
-$gaymers-font: 'Montserrat', sans-serif;
+$header-font: 'Nunito', sans-serif;
+$body-font: 'Open Sans', sans-serif;
 
-// Base styles
+// Base Styles
+* {
+  box-sizing: border-box;
+}
+
 html {
-  font-family: $gaymers-font;
-  color: #222;
-  background-color: #FFF;
+  font-family: $body-font;
+  color: #222222;
+  background-color: #FFFFFF;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column;
+  overflow-x: hidden;
 }
 
 h1,
@@ -28,24 +45,23 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: bold;
+  font-family: $header-font;
+  font-style: italic;
+  font-weight: 600;
 }
 
 a {
-  color: $gaymers-secondary;
-  text-decoration: none;
-  border-bottom: 1px solid $gaymers-secondary;
-  transition: color ease-out 150ms, border-bottom ease-out 150ms;
+  color: $gaymers-primary;
+  transition: color ease-out 150ms;
 }
 
 a:hover {
-  color: $gaymers-secondary-dark;
-  border-bottom: 1px solid $gaymers-secondary-dark;
+  color: $gaymers-primary-dark;
 }
 
 // Import partials.
-// @import
-//   "base",
-//   "layout",
-//   "syntax-highlighting"
-// ;
+@import
+  "layout",
+  "posts",
+  "events"
+;

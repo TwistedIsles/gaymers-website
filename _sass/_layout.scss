@@ -1,0 +1,113 @@
+// Wrappers
+.wrapper {
+  display: block;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 10px;
+
+  @media only screen and (min-width: 950px) {
+    padding: 0;
+  }
+}
+
+// Header
+header {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  background-color: white;
+  z-index: 10;
+  position: relative;
+
+  .wrapper {
+    padding: 0;
+  }
+
+  .brand-container {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+
+    @media only screen and (min-width: 768px) {
+      // justify-content: flex-start;
+    }
+  }
+
+  .site-logo {
+    display: block;
+    margin-right: 10px;
+    height: 50px;
+    width: 50px;
+  }
+
+  .site-title {
+    display: none;
+    color: $gaymers-blue;
+    font-weight: bold;
+    text-decoration: none;
+
+    &:hover {
+      color: darken($gaymers-blue, 10%);
+    }
+
+    @media only screen and (min-width: 768px) {
+      // display: block;
+    }
+  }
+}
+
+nav {
+  margin: 10px 0 0 0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  overflow-x: scroll;
+
+  @media only screen and (min-width: 768px) {
+      // justify-content: flex-start
+  }
+
+  a {
+    color: #333333;
+    text-decoration: none;
+    margin: 0 10px;
+
+    &:hover {
+      color: $gaymers-blue, 10%;
+    }
+  }
+}
+
+// Footer
+footer {
+  overflow-y: hidden;
+  margin-top: auto;
+  padding-top: 30px;
+  height: 150px;
+
+  .content-container {
+    background-color: $gaymers-blue;
+    transform: rotateZ(2deg);
+    width: 104%;
+    margin-left: -2%;
+    padding: 40px 2% 70px;
+  }
+  
+
+  .wrapper {
+    transform: rotateZ(-2deg);
+  }
+
+  p {
+    display: block;
+    max-width: 500px;
+    margin: 0 auto;
+    color: #FFFFFF;
+    font-size: 14px;
+    text-align: center;
+  }
+}

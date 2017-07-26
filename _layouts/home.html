@@ -2,10 +2,19 @@
 layout: default
 ---
 
-<div class="home">
+<div class="home wrapper">
+  <div class="header">
+    {{ content }}
+  </div>
 
-  <h1 class="page-heading">Welcome to Gaymers</h1>
-  
-  {{ content }}
+  <div class="post-list">
+    {% for post in site.posts %}
+      {% assign date_format = "%b %-d, %Y" %}
+      <span class="post-meta">{{ post.date | date: date_format }}</span>
 
+      <h2>
+        <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+      </h2>
+    {% endfor %}
+  </div>
 </div>

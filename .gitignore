@@ -5,6 +5,3 @@
 _site
 .sass-cache
 .jekyll-metadata
-
-# Bower
-/bower_components/
