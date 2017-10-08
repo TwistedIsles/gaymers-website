@@ -1,0 +1,16 @@
+footer {
+  margin-top: 15px;
+  background: linear-gradient(to right, $gaymers-blue 0%, darken($gaymers-cyan, 15%) 100%);
+  color: #FFFFFF;
+
+  .footer-content {
+    width: 90%;
+    max-width: 500px;
+    margin: 15px auto;
+  }
+
+  p {
+    margin: 0;
+    text-align: center;
+  }
+}

@@ -1,0 +1,130 @@
+// Overlay Gradients
+$overlay-gradient-red-purple: linear-gradient(to top, rgba($gaymers-red, .5) 0%, rgba($gaymers-purple, 0) 100%);
+$overlay-gradient-blue-cyan: linear-gradient(to top, rgba($gaymers-blue, .5) 0%, rgba($gaymers-cyan, 0) 100%);
+$overlay-gradient-orange-yellow: linear-gradient(to top, rgba($gaymers-orange, .5) 0%, rgba($gaymers-yellow, 0) 100%);
+
+// Shadow Gradients
+$shadow-gradient-red-purple: linear-gradient(to top, $gaymers-red 0%, $gaymers-purple 100%);
+$shadow-gradient-blue-cyan: linear-gradient(to top, $gaymers-blue 0%, $gaymers-cyan 100%);
+$shadow-gradient-orange-yellow: linear-gradient(to top, $gaymers-orange 0%, $gaymers-yellow 100%);
+
+.post {
+  margin-bottom: 30px;
+
+  .header {
+    position: relative;
+  }
+
+  .title-container {
+    position: absolute;
+    z-index: 4;
+    bottom: 30px;
+    left: 30px;
+    width: calc(100% - 6%);
+    color: #FFFFFF;
+
+    .post-title {
+      margin: 0;
+      font-weight: 700;
+      font-size: 36px;
+    }
+
+    .post-meta {
+      font-size: 20px;
+    }
+  }
+
+  .image-container {
+    width: 100%;
+    color: purple;
+
+    img {
+      display: block;
+      position: relative;
+      width: calc(100% - 1%);
+      z-index: 2;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      z-index: 3;
+      top: 0;
+      bottom: 0;
+      width: calc(100% - 1%);
+      background: $overlay-gradient-red-purple;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      top: 1.5%;
+      right: 0;
+      bottom: -1.5%;
+      left: 1%;
+      width: calc(100% - 1%);
+      background: $shadow-gradient-red-purple;
+    }
+  }
+
+  .content-container {
+    margin-top: 30px;
+
+    a {
+      color: $gaymers-red;
+      transition: color ease-out 150ms;
+    
+      &:hover {
+        color: $gaymers-purple;
+      }
+    }
+  }
+
+  &:nth-child(odd) {
+    .image-container {
+      &:before {
+        background: $overlay-gradient-blue-cyan;
+      }
+  
+      &:after {
+        background: $shadow-gradient-blue-cyan;
+      }
+    }
+
+    .content-container {
+      a {
+        color: $gaymers-blue;
+        transition: color ease-out 150ms;
+      
+        &:hover {
+          color: $gaymers-cyan;
+        }
+      }
+    }
+  }
+
+  &:nth-child(3n+0) {
+    .image-container {
+      &:before {
+        background: $overlay-gradient-orange-yellow;
+      }
+  
+      &:after {
+        background: $shadow-gradient-orange-yellow;
+      }
+    }
+
+    .content-container {
+      a {
+        color: $gaymers-orange;
+        transition: color ease-out 150ms;
+      
+        &:hover {
+          color: $gaymers-yellow;
+        }
+      }
+    }
+  }
+}
+

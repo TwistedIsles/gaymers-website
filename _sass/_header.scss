@@ -1,0 +1,42 @@
+header {
+  padding: 10px 0;
+
+  .brand-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    .home-link {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    svg {
+      width: 50px;
+      height: 50px;
+    }
+
+    span {
+      margin-left: 15px;
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .discord-button {
+      margin-left: auto;
+    }
+  }
+
+  nav {
+    margin-top: 15px;
+
+    a {
+      text-decoration: none;
+      margin-right: 15px;
+    }
+  }
+}
