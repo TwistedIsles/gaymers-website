@@ -4,12 +4,15 @@
     {% assign page_paths = site.header_pages | default: default_paths %}
 
     <div class="brand-container">
-      <a href="{{ "/" | relative_url }}">
+      <a class="home-link" href="{{ "/" | relative_url }}">
         {% include logo.html %}
-        {{ site.title | escape }}
+        <span>{{ site.title | escape }}</span>
       </a> 
-    </div>
 
+      <a class="discord-button" href="https://discord.gg/gaymersgg">
+        <div>Join us on Discord</div>
+      </a>
+    </div>
   
     {% if page_paths %}
       <nav class="site-nav">
@@ -19,7 +22,6 @@
           <a href="{{ page.url | relative_url }}">{{ page.title | escape }}</a>
           {% endif %}
         {% endfor %}
-        <a class="discord-button" href="#">Join us on Discord!</a>
       </nav>
     {% endif %}
   </div>
