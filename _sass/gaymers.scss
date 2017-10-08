@@ -5,19 +5,15 @@ $gaymers-red: #FB0646;
 $gaymers-orange: #FF8235;
 $gaymers-yellow: #FFF90E;
 $gaymers-green: #00E438;
+$gaymers-cyan: #12D2F9;
 $gaymers-blue: #0B4CCC;
 $gaymers-purple: #D912F9;
-
-$gaymers-primary: $gaymers-blue;
-$gaymers-primary-dark: darken($gaymers-blue, 10%);
-$gaymers-primary-light: lighten($gaymers-blue, 10%);
 
 $discord-purple: #7289DA;
 $discord-purple-dark: darken($discord-purple, 10%);
 
 // Fonts
-$header-font: 'Nunito', sans-serif;
-$body-font: 'Open Sans', sans-serif;
+$gaymers-font: 'Open Sans', sans-serif;
 
 // Base Styles
 * {
@@ -25,8 +21,8 @@ $body-font: 'Open Sans', sans-serif;
 }
 
 html {
-  font-family: $body-font;
-  color: #222222;
+  font-family: $gaymers-font;
+  color: #333333;
   background-color: #FFFFFF;
 }
 
@@ -39,29 +35,38 @@ body {
   overflow-x: hidden;
 }
 
+.wrapper {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+
+  @media (max-width: 930px) {
+    width: 90%;
+  }
+}
+
 h1,
 h2,
-h3,
+h3
 h4,
 h5,
 h6 {
-  font-family: $header-font;
-  font-style: italic;
-  font-weight: 600;
+  font-family: $gaymers-font;
 }
 
 a {
-  color: $gaymers-primary;
+  color: $gaymers-cyan;
   transition: color ease-out 150ms;
-}
 
-a:hover {
-  color: $gaymers-primary-dark;
+  &:hover {
+    color: $gaymers-blue;
+  }
 }
 
 // Import partials.
 @import
-  "layout",
-  "posts",
-  "events"
+  "logo",
+  "header",
+  "home",
+  "post"
 ;

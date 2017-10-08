@@ -2,47 +2,47 @@
 layout: default
 ---
 
-<div class="home">
-  <div class="header wrapper">
-    {{ content }}
-  </div>
+<div class="featured-articles wrapper">
+  {% assign featured_posts = (site.posts | where: "featured", "true") %}
+  {% for post in featured_posts limit: 3 %}
+      {{ post.title }}
+  {% endfor %}
+</div>
 
-  <div class="post-list">
-    {% for post in site.posts %}
-      <div class="post">
-        {% assign date_format = "%b %-d, %Y" %}
-        {% if post.image %}
-          <div class="image-container wrapper">
-            <div class="image-cover"></div>
-            <img src="{{ site.url }}/assets/images/{{ post.image }}" />
-          </div>
-        {% endif %}
-
-        <div class="title-container {{ post.type }}">
-          <div class="wrapper">
-            <a class="post-link" href="{{ post.url | relative_url }}">
-              <h1 class="post-title" itemprop="name headline">{{ post.title | escape }}</h1>
-            </a>
-
+<div class="posts wrapper">
+  <h1 class="section-title">Latest Articles</h1>
+  {% for post in site.posts %}
+    <div class="post">
+      <a href="{{ post.url }}">
+        <div class="header">
+          <div class="title-container">
+            <h2 class="post-title" itemprop="name headline">{{ post.title | escape }}</h1>
+        
             <div class="post-meta">
               <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">
+                {% assign date_format = "%b %-d, %Y" %}
                 {{ post.date | date: date_format }}
               </time>
 
-              {% if post.author %}
-                <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-                  <span class="author" itemprop="name">— {{ post.author }}</span>
-                </span>
-              {% endif %}
+              <span> — </span>
+        
+              <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                <span class="author" itemprop="name">{{ post.author }}</span>
+              </span>
             </div>
           </div>
-        </div>
 
-        <div class="content-container wrapper"itemprop="articleBody">
-          {{ post.excerpt }}
+          <div class="image-container">
+            <img class="post-image" src="{{ site.url }}/assets/images/{{ post.image }}" />
+          </div>
         </div>
+      </a>
 
+      <div class="content-container" itemprop="articleBody">
+        {{ post.excerpt }}
+
+        <a class="post-more" href="{{ post.url }}">Read More</a>
       </div>
-    {% endfor %}
-  </div>
+    </div>
+  {% endfor %}
 </div>
