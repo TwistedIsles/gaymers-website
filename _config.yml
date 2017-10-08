@@ -7,10 +7,6 @@ baseurl: "/gaymers-website"
 excerpt_separator: <!--more-->
 twitter_username: GaymersGG
 paginate: 5
-collections:
-  events:
-    output: true
-    permalink: /:collection/:name
 
 # Build settings
 markdown: kramdown
