@@ -12,3 +12,18 @@
 .posts {
 
 }
+
+.pagination {
+  margin-bottom: 15px;
+
+  a {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .next {
+    text-align: right;
+  }
+}

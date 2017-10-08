@@ -11,7 +11,7 @@ layout: default
 
 <div class="posts wrapper">
   <h1 class="section-title">Latest Articles</h1>
-  {% for post in site.posts %}
+  {% for post in paginator.posts %}
     <div class="post">
       <a href="{{ post.url }}">
         <div class="header">
@@ -45,4 +45,14 @@ layout: default
       </div>
     </div>
   {% endfor %}
+</div>
+
+<div class="pagination wrapper">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path }}" class="previous">Previous</a>
+  {% endif %}
+
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path }}" class="next">Next</a>
+  {% endif %}
 </div>
