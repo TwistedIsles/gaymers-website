@@ -67,13 +67,18 @@ a {
   text-decoration: none;
   position: relative;
 
+  @media (max-width: 500px) {
+    display: block;
+    width: 100%;
+  }
+
   div {
     position: relative;
     z-index: 2;
     padding: 7px 15px 7px 50px;
     color: #FFFFFF;
     background-color: $discord-purple;
-    
+    text-align: center;
   }
 
   &:before {
