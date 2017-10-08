@@ -69,6 +69,8 @@ $shadow-gradient-orange-yellow: linear-gradient(to top, $gaymers-orange 0%, $gay
   }
 
   .content-container {
+    margin-top: 30px;
+
     a {
       color: $gaymers-red;
       transition: color ease-out 150ms;

@@ -1,8 +1,8 @@
 ---
 layout: default
 ---
-<article class="post {{ page.type }}" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="image-container wrapper">
+<article class="post wrapper" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="header">
     <div class="title-container">
       <h2 class="post-title" itemprop="name headline">{{ page.title | escape }}</h1>
   
@@ -11,18 +11,21 @@ layout: default
           {% assign date_format = "%b %-d, %Y" %}
           {{ page.date | date: date_format }}
         </time>
+
+        <span> — </span>
   
         <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <span class="author" itemprop="name">— {{ page.author }}</span>
+          <span class="author" itemprop="name">{{ page.author }}</span>
         </span>
       </div>
     </div>
-    
-    <div class="image-overlay"></div>
-    <img src="{{ site.url }}/assets/images/{{ page.image }}" />
+
+    <div class="image-container">
+      <img class="post-image" src="{{ site.url }}/assets/images/{{ page.image }}" />
+    </div>
   </div>
 
-  <div class="content-container wrapper"itemprop="articleBody">
+  <div class="content-container" itemprop="articleBody">
     {{ content }}
   </div>
 </article>
