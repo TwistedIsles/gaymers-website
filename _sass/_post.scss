@@ -9,6 +9,8 @@ $shadow-gradient-blue-cyan: linear-gradient(to top, $gaymers-blue 0%, $gaymers-c
 $shadow-gradient-orange-yellow: linear-gradient(to top, $gaymers-orange 0%, $gaymers-yellow 100%);
 
 .post {
+  margin-bottom: 30px;
+
   .header {
     position: relative;
   }
@@ -66,6 +68,17 @@ $shadow-gradient-orange-yellow: linear-gradient(to top, $gaymers-orange 0%, $gay
     }
   }
 
+  .content-container {
+    a {
+      color: $gaymers-red;
+      transition: color ease-out 150ms;
+    
+      &:hover {
+        color: $gaymers-purple;
+      }
+    }
+  }
+
   &:nth-child(odd) {
     .image-container {
       &:before {
@@ -74,6 +87,17 @@ $shadow-gradient-orange-yellow: linear-gradient(to top, $gaymers-orange 0%, $gay
   
       &:after {
         background: $shadow-gradient-blue-cyan;
+      }
+    }
+
+    .content-container {
+      a {
+        color: $gaymers-blue;
+        transition: color ease-out 150ms;
+      
+        &:hover {
+          color: $gaymers-cyan;
+        }
       }
     }
   }
@@ -86,6 +110,17 @@ $shadow-gradient-orange-yellow: linear-gradient(to top, $gaymers-orange 0%, $gay
   
       &:after {
         background: $shadow-gradient-orange-yellow;
+      }
+    }
+
+    .content-container {
+      a {
+        color: $gaymers-orange;
+        transition: color ease-out 150ms;
+      
+        &:hover {
+          color: $gaymers-yellow;
+        }
       }
     }
   }
