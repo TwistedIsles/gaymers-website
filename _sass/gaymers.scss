@@ -99,12 +99,13 @@ a {
 
   &:after {
     content: "";
-    width: calc(100% - 0.3em);
+    width: 100%;
     position: absolute;
     z-index: 1;
     top: 0.3em;
     right: -0.3em;
     bottom: -0.3em;
+    left: 0.3em;
     background: linear-gradient(to top, $gaymers-blue 0%, $gaymers-cyan 100%);
 
     @media (max-width: 500px) {
