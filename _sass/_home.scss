@@ -6,7 +6,54 @@
 }
 
 .featured-posts {
+  display: grid;
+  grid-template-areas: "article-1 article-1 article-2"
+                       "article-1 article-1 article-3";
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 0.45em 1em;
 
+  .post {
+    margin-bottom: 0;
+
+    &:nth-child(1) {
+      grid-area: article-1;
+    }
+
+    &:nth-child(2) {
+      grid-area: article-2;
+
+      .title-container {
+        bottom: 15px;
+        left: 15px;
+      }
+
+      .post-title {
+        font-size: 20px;
+      }
+
+      .post-meta {
+        font-size: 12px;
+      }
+    }
+
+    &:nth-child(3) {
+      grid-area: article-3;
+
+      .title-container {
+        bottom: 15px;
+        left: 15px;
+      }
+
+      .post-title {
+        font-size: 20px;
+      }
+
+      .post-meta {
+        font-size: 12px;
+      }
+    }
+  }
 }
 
 .posts {
