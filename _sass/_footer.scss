@@ -1,7 +1,7 @@
 footer {
   margin-top: 15px;
-  background: linear-gradient(to right, $gaymers-blue 0%, darken($gaymers-cyan, 15%) 100%);
-  color: #FFFFFF;
+  // background: linear-gradient(to right, $gaymers-blue 0%, darken($gaymers-cyan, 15%) 100%);
+  // color: #FFFFFF;
 
   .footer-content {
     width: 90%;
@@ -12,5 +12,12 @@ footer {
   p {
     margin: 0;
     text-align: center;
+  }
+
+  .text {
+    background-image: linear-gradient(to bottom left, $gaymers-cyan 20%, $gaymers-blue 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
 }
