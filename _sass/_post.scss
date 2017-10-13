@@ -1,13 +1,3 @@
-// Overlay Gradients
-$overlay-gradient-red-purple: linear-gradient(to top, rgba($gaymers-red, .5) 0%, rgba($gaymers-purple, 0) 100%);
-$overlay-gradient-blue-cyan: linear-gradient(to top, rgba($gaymers-blue, .5) 0%, rgba($gaymers-cyan, 0) 100%);
-$overlay-gradient-orange-yellow: linear-gradient(to top, rgba($gaymers-orange, .5) 0%, rgba($gaymers-yellow, 0) 100%);
-
-// Shadow Gradients
-$shadow-gradient-red-purple: linear-gradient(to top, $gaymers-red 0%, $gaymers-purple 100%);
-$shadow-gradient-blue-cyan: linear-gradient(to top, $gaymers-blue 0%, $gaymers-cyan 100%);
-$shadow-gradient-orange-yellow: linear-gradient(to top, $gaymers-orange 0%, $gaymers-yellow 100%);
-
 .post {
   margin-bottom: 30px;
 
