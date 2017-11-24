@@ -46,6 +46,10 @@ body {
   overflow-x: hidden;
 }
 
+main{
+  flex: 1;
+}
+
 .wrapper {
   width: 100%;
   max-width: 900px;
