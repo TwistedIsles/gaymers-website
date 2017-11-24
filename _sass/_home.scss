@@ -7,8 +7,9 @@
 
 .featured-posts {
   display: grid;
-  grid-template-areas: "article-1 article-1 article-2"
-                       "article-1 article-1 article-3";
+  grid-template-areas: 
+                      "article-1 article-1 article-2"
+                      "article-1 article-1 article-3";
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 0.45em 1em;
